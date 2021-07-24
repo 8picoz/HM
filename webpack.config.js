@@ -1,5 +1,5 @@
 const CopyPlugin = require("copy-webpack-plugin");
-const path = require("node:path");
+const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
 
 const MODE = process.env.NODE_ENV || 'development';
 const PROD = MODE === 'production';
@@ -44,6 +44,9 @@ module.exports = {
             },
         ],
     },
+    experiments: {
+        asyncWebAssembly: true,
+    },
     
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx", ".wasm"],
@@ -54,9 +57,9 @@ module.exports = {
         port: 8080,
     },
     plugins: [
-        new CopyPlugin({patterns: copyRules}),
         new WasmPackPlugin({
-            crateDirectory: path.join(__dirname, "wasm/pkg")
+            crateDirectory: __dirname + "/wasm",
         }),
+        new CopyPlugin({patterns: copyRules}),
     ],
 };
