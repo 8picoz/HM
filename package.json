@@ -19,13 +19,14 @@
   },
   "homepage": "https://github.com/8picomu/Typescript-Playground#readme",
   "dependencies": {
+    "hm_wasm": "file:./wasm/pkg",
     "navi": "^0.14.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-navi": "^0.14.4",
     "react-redux": "^7.2.3",
     "redux": "^4.0.5",
-    "hm_wasm": "file:./wasm/pkg"
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.35",
