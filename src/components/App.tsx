@@ -1,10 +1,10 @@
-import * as wasm from "hm_wasm";
 import React from "react";
+import { Terminal } from "./pages/Terminal";
 
 const App: React.FC = () => {
   return (
     <div>
-      <div>{wasm.sums(50)}</div>
+      <Terminal />
     </div>
   );
 };

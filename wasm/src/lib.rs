@@ -7,3 +7,12 @@ pub fn sums(value: i32) -> i32 {
     }
     a
 }
+
+#[wasm_bindgen]
+#[derive(Default)]
+pub struct HindleyMilner {}
+
+#[wasm_bindgen]
+impl HindleyMilner {
+    
+}
